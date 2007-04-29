@@ -206,7 +206,7 @@ void HitPairGeneratorFromLayerPair::
       }
       Range crossRange = allowed.intersection(hitRZ);
       if (! crossRange.empty() ) {
-        result.push_back( OrderedHitPair( SeedingHit(*ih,iSetup), SeedingHit(*oh,iSetup) ) );
+        result.push_back( OrderedHitPair( SeedingHit(*ih,theInnerLayer,iSetup), SeedingHit(*oh,theOuterLayer, iSetup) ) );
       }
     } 
     delete checkRZ;
