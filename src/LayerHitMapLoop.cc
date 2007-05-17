@@ -1,7 +1,6 @@
 #include "RecoTracker/TkHitPairs/interface/LayerHitMap.h"
 #include "RecoTracker/TkHitPairs/interface/LayerHitMapLoop.h"
 #include "RecoTracker/TkMSParametrization/interface/PixelRecoUtilities.h"
-#include "FWCore/MessageLogger/interface/MessageLogger.h"
 
 
 using namespace std;
@@ -31,7 +30,6 @@ LayerHitMapLoop::LayerHitMapLoop(
 
 
   if ( fabs(theRangePhi.second-theRangePhi.first) > 2*M_PI) {
-    edm::LogError("*** LayerHitMapLoop ERROR ***") <<" LayerHitMapLoop ERROR: Problem with phi range!"; 
     theRangePhi.first = -M_PI;
     theRangePhi.second = M_PI-1.e-6;
   }

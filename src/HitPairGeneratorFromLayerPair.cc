@@ -43,6 +43,10 @@ void HitPairGeneratorFromLayerPair::hitPairs(
   }
   //  static int NSee = 0; static int Ntry = 0; static int Nacc = 0;
 
+  if (fabs(region.origin().z()) > 200.) 
+      edm::LogError(" *** HitPairGeneratorFromLayerPair *** ") 
+          <<" ERROR: Region called with wrong z:"<<region.origin().z();
+
   typedef OrderedHitPair::InnerHit InnerHit;
   typedef OrderedHitPair::OuterHit OuterHit;
 
