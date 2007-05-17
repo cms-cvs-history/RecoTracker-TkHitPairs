@@ -48,6 +48,10 @@ void HitPairGeneratorFromLayerPairBC::hitPairs(
   typedef OrderedHitPair::InnerHit InnerHit;
   typedef OrderedHitPair::OuterHit OuterHit;
 
+if (fabs(region.origin().z()) > 200.)
+      edm::LogError(" *** HitPairGeneratorFromLayerPair *** ")
+          <<" ERROR: Region called with wrong z:"<<region.origin().z();
+
 
   const LayerHitMap & innerHitsMap = theLayerCache(theInnerLayer, region,iSetup);
   if (innerHitsMap.empty()) return;
